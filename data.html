@@ -9,33 +9,12 @@
         <title>Dual Patterns</title>
         <link rel="icon" type="image/x-icon" href="./images/favicon.png">
         <style>
-    /* width */
-  ::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow:transparent; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(131 ,145 ,155, 0.54); 
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(131 ,145 ,155, 0.54); 
-}
             body {
                 /* background-color: #a1d2ff;*/
                 background-color: #020d1c;
                 overflow: hidden;
             }
-            body:hover{
+            body:hover {
                 overflow-y: scroll;
                 overflow-x: hidden;
             }
@@ -44,25 +23,25 @@
                 /*  flex-flow: wrap;*/
                 flex-direction: column-reverse;
                 align-items: flex-start;
-                margin-left: 8px; 
+                margin-left: 8px;
             }
 
             .egroup {
                 width: auto;
                 height: 18px;
-                margin: 4px 0px 4px 0px;
+                margin: 4px 0;
                 /* background-color: green; */
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color:#46d16a;
+                color: #46d16a;
                 padding: 0;
                 font-size: 24px;
                 font-family: sans-serif;
                 font-weight: lighter;
             }
             .etext {
-                color:#4fab4f;
+                color: #4fab4f;
                 padding: 0;
                 font-size: 24px;
                 font-family: sans-serif;
@@ -71,7 +50,7 @@
             .ogroup {
                 width: auto;
                 height: 18px;
-                margin: 4px 0px 4px 0px;
+                margin: 4px 0;
                 /* background-color: red; */
                 display: flex;
                 justify-content: center;
@@ -89,51 +68,50 @@
                 font-family: sans-serif;
                 font-weight: lighter;
             }
-            .enum1{
+            .enum1 {
                 color: #00a1ff;
                 padding: 0;
                 font-size: 24px;
                 font-family: sans-serif;
                 font-weight: lighter;
             }
-            .onum1{
+            .onum1 {
                 color: #00a1ff;
                 padding: 0;
                 font-size: 24px;
                 font-family: sans-serif;
                 font-weight: lighter;
             }
-           
         </style>
 
     </head>
 
     <body>
         <!-- <div class="mainContainer">
-                                            <div class="linea"></div>
-                                           
-                                        </div> -->
+                                                    <div class="linea"></div>
+                                                   
+                                                </div> -->
         <div id="container"></div>
 
         <!-- structura interna -->
         <!-- 
-                <div class="egroup">
-                    <span class="etext">2e</span>
-                </div>
-                <div class="ogroup">
-                    <span class="otext">3o</span>
-                </div>
-              -->
+                        <div class="egroup">
+                            <span class="etext">2e</span>
+                        </div>
+                        <div class="ogroup">
+                            <span class="otext">3o</span>
+                        </div>
+                      -->
 
         <script>
 
             var out = document.body;
             // ==============================================================
 
-            // var arr1 = [];
-            // var arr2 = [];
-            // arr2[0] = 0;
-            // var listC = [];
+            var arr1 = [];
+            var arr2 = [];
+            arr2[0] = 0;
+            var listC = [];
             var porcentList = [];
             periods = 25;
 
@@ -162,9 +140,11 @@
 
                 if (digit % 2 === 0) {
                     var text = "O";
-                    if (oCounter > 0) { // arr1.push(oCounter + text);
-                        AñadirGruposE(digit, 1);
+                    if (oCounter > 0) {
+                        //arr1.push(oCounter + text);
+                           AñadirGruposE(digit, 1);
                         addEGroup = true
+                        
 
                     }
                     oCounter = 0;
@@ -172,9 +152,11 @@
 
                 } else {
                     var text = "E";
-                    if (eCounter > 0) { // arr1.push(eCounter + text);
-                        AñadirGruposO(digit, 1);
+                    if (eCounter > 0) {
+                      //  arr1.push(eCounter + text);
+                         AñadirGruposO(digit, 1);
                         addOGroup = true;
+                       
 
                     }
                     eCounter = 0;
@@ -185,9 +167,9 @@
                     // arr2[0] = eCounter + text;
                     if (addEGroup) {
                         addEGroup = false;
-                    } else {
-                        AñadirDigitsE(digit, eCounter);
-
+                    } else { 
+                         AñadirDigitsE(digit, eCounter);
+                       
                     }
 
                     // console.log("Ecounter mayor a cero");
@@ -198,7 +180,9 @@
                     if (addOGroup) {
                         addOGroup = false;
                     } else {
-                        AñadirDigitsO(digit, oCounter,);
+                          AñadirDigitsO(digit, oCounter,);
+                      
+                       
 
                     }
 
@@ -207,14 +191,14 @@
                 // mostrar en lista este array
                 // listC = arr1 + "," + arr2;
                 // console.log("Groups: " + listC);
+              
                 // var digitListView = document.getElementById("digitGroups");
 
 
                 // TODO:  your script goes here
                 // colors text 🟢🔵🔴
 
-                function AñadirGruposE(digito, Ec) {
-                    //var edigitText = document.createTextNode(digito);
+                function AñadirGruposE(digito, Ec) { // var edigitText = document.createTextNode(digito);
                     var edigitText = document.createTextNode("e");
                     var senum1 = document.createElement("span");
                     var enum1 = document.createTextNode("1");
@@ -223,8 +207,8 @@
                     var eGroup = document.createElement("div");
                     var Etext = document.createElement("span");
                     Etext.setAttribute("class", "etext");
-                     Etext.appendChild(edigitText); 
-                     
+                    Etext.appendChild(edigitText);
+
 
                     eGroup.setAttribute('class', 'egroup');
                     eGroup.appendChild(Etext);
@@ -233,26 +217,29 @@
                     var container = document.getElementById("container");
                     container.appendChild(eGroup);
 
-
+arr1.push("e1");
+console.log("Groups: " + arr1);
                 }
 
                 function AñadirDigitsE(digito, Ec) {
 
                     var edigitText = document.createTextNode(digito);
-                 //   var counterItem = document.getElementsByClassName("etext");
+                    // var counterItem = document.getElementsByClassName("etext");
                     var counterItem = document.getElementsByClassName("egroup");
 
                     // counterItem[counterItem.length - 1].appendChild(edigitText);
                     if (Ec >= 2) {
                         counterItem[counterItem.length - 1].innerHTML = "2e"
                         counterItem[counterItem.length - 1].style = "transform:translate(12px,0px);"
+
+                        arr1[arr1.length-1] ="2e";
+                        console.log("Groups: " + arr1);
                     }
                     // console.log("contador e:"+Ec);
 
                 }
 
-                function AñadirGruposO(digito, Oc,) {
-                  //  var odigitText = document.createTextNode(digito);
+                function AñadirGruposO(digito, Oc,) { // var odigitText = document.createTextNode(digito);
                     var odigitText = document.createTextNode("o");
 
                     var sonum1 = document.createElement("span");
@@ -262,8 +249,8 @@
 
                     var Otext = document.createElement("span");
                     Otext.setAttribute("class", "otext");
-                     Otext.appendChild(odigitText);
-                   
+                    Otext.appendChild(odigitText);
+
 
                     var oGroup = document.createElement("div");
                     oGroup.setAttribute('class', 'ogroup');
@@ -273,7 +260,8 @@
 
                     var container = document.getElementById("container");
                     container.appendChild(oGroup);
-
+                    arr1.push("o1");
+                    console.log("Groups: " + arr1);
                 }
 
                 function AñadirDigitsO(digito, Oc) {
@@ -281,11 +269,13 @@
                     var odigitText = document.createTextNode(digito);
 
                     var counterItem = document.getElementsByClassName("ogroup");
-                   // var counterItem = document.getElementsByClassName("otext");
+                    // var counterItem = document.getElementsByClassName("otext");
                     // counterItem[counterItem.length - 1].appendChild(odigitText);
                     if (Oc >= 2) {
                         counterItem[counterItem.length - 1].innerHTML = "2o";
                         counterItem[counterItem.length - 1].style = "transform:translate(12px,0px);";
+                        arr1[arr1.length-1] ="2o";
+                        console.log("Groups: " + arr1);
                     }
 
 
