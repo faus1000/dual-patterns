@@ -6,7 +6,7 @@
         <meta
         name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- <script src="main.js"></script> -->
-        <title>Dual Patterns</title>
+        <title>Dual Patterns V100</title>
         <link rel="icon" type="image/x-icon" href="./images/favicon.png">
         <style>
     /* width */
@@ -50,8 +50,8 @@
             .egroup {
                 width: auto;
                 height: 18px;
-                margin: 4px 0px 4px 0px;
-                /* background-color: green; */
+              margin: 2px 0px 2px 0px;
+                  /* background-color: green; */
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -71,7 +71,7 @@
             .ogroup {
                 width: auto;
                 height: 18px;
-                margin: 4px 0px 4px 0px;
+                margin: 2px 0px 2px 0px;
                 /* background-color: red; */
                 display: flex;
                 justify-content: center;
@@ -141,8 +141,8 @@
             var oCounter = 0;
 
 
-            var symbol = "R_50";
-            var decimals = 4;
+            var symbol = "R_100";
+            var decimals = 2;
 
 
             var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1089');
@@ -193,7 +193,7 @@
                     // console.log("Ecounter mayor a cero");
                 }
                 if (oCounter > 0) {
-                    // var text = "O";
+                    // var text = "O"; 
                     // arr2[0] = oCounter + text;
                     if (addOGroup) {
                         addOGroup = false;
